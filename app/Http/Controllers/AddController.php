@@ -18,11 +18,6 @@ class AddController extends Controller
             'Age' => 'required|integer|min:20|max:100',
             'Number' => 'required|numeric|starts_with:08|digits_between:9,12',
             'Address' => 'required|string|min:10|max:40'
-            // 'Name' => 'required|string|min:5|max:20,
-            // 'Email' => ['required', 'email:dns'],
-            // 'Age' => ['required','min:20', 'max:100'],
-            // 'Address' => ['required', 'min:10', 'max:40'],
-            // 'Number' => ['required', 'starts_with:08', 'min:9', 'max:12']
         ]);
         Add::create([
             'Name' => $request->Name,

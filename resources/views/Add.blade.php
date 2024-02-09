@@ -26,7 +26,7 @@
 
     <div class="kosong"></div>
 
-    <h1 class="heading">Karyawan Baru</h1>
+    <h1 class="heading">CREATE</h1>
 
     <div class="container">
         <div class="box">
@@ -44,7 +44,7 @@
                     @error('Name')
                         <div class = "error-message"> {{$message}} </div>
                     @enderror
-                    <!-- <p id="error-name" class="error-message" name="Names" value = "{{ old('Names') }}"></p> -->
+
                 </div>
 
                 <div class="inputs">
@@ -66,7 +66,7 @@
                         @error('Address')
                         <div class = "error-message"> {{$message}} </div>
                         @enderror
-                        <!-- <p id="error-add" class="error-message" name="Addresss" value = "{{ old('Addresss') }}"></p> -->
+
                 </div>
 
                 <div class="wrap">
@@ -79,7 +79,7 @@
                         @error('Number')
                             <div class = "error-message"> {{$message}} </div>
                         @enderror
-                        <!-- <p id="error-wa" class="error-message" name="Numbers" value = "{{ old('Numbers') }}"></p> -->
+
                     </div>
 
                     <div class="selection2">
@@ -90,10 +90,10 @@
                         @error('Age')
                         <div class = "error-message"> {{$message}} </div>
                         @enderror
-                        <!-- <p id="error-age" class="error-message" name="Ages" value = "{{ old('Ages') }}"></p> -->
+
                     </div>
                 </div>
-            <!-- </form> -->
+
 
             
         </div>
@@ -101,6 +101,6 @@
         <button id="step-btn" type="submit" href="create-list">ADD</button>
     </div>
 </form>
-    <script src="JS/Add.js"></script>
+
 </body>
 </html>

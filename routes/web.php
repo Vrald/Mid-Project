@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Add;
 use App\Http\Controllers\AddController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,20 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('List', ['adds' => Add::all()]);
+});
+
 Route::get('/List', function () {
     return view('List');
-});
-
-Route::get('/', function () {
-    return view('List');
-});
-
-Route::get('/Add', function () {
-    return view('Add');
-});
-
-Route::get('/updateData', function () {
-    return view('updateData');
 });
 
 Route::get('/create-add', [AddController::class, 'Add']);

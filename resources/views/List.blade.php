@@ -64,7 +64,7 @@
                                     <div class="faq-space">
                                         <i class="fa-solid fa-location-dot"></i>
                                     </div>
-                                    <!-- <p>Silver Coconut, Block A No 12, Kelapa Gading</p> -->
+
                                     <p>{{$add->Address}}</p>
                                 </div>
                                 
@@ -72,7 +72,7 @@
                                     <div class="faq-space">
                                         <img src="images/b-mail.png" alt="" style="widht: 80px; height: 65px;">
                                     </div>
-                                    <!-- <p>johndoe@gmail.com</p> -->
+
                                     <p>{{$add->Email}}</p>
                                 </div>
 
@@ -80,18 +80,15 @@
                                     <div class="faq-space">
                                         <img src="images/b-wa.png" alt="">
                                     </div>
-                                    <!-- <p>08123123123</p> -->
+
                                     <p>{{$add->Number}}</p>
                                 </div>
-
-                                <!-- Leader Data Button CV-->
 
                                 <div class="wrap-faq">
                                     <div class="faq-button">
                                         <a href="/update/{{ $add->id }}"><button>Update</button></a>
                                     </div>
 
-                                    <!-- Leader Data Button FLASS CARD-->
                                     <div class="faq-button">
                                         <form action="/delete-data/{{ $add->id }}" method="POST">
                                             @csrf
@@ -148,23 +145,7 @@
                                     </div>
 
                                     <p>081234567891</p>
-                                </div>
-
-                                <!-- Leader Data Button CV-->
-
-                                <div class="wrap-faq">
-                                    <div class="faq-button">
-                                        <button>Update</button>
-                                        <div class="download"></div>
-                                    </div>
-
-                                    <!-- Leader Data Button FLASS CARD-->
-                                    <div class="faq-button">
-                                        <button>Delete</button>
-                                        <div class="download2"></div>
-                                    </div>
-                                </div>
-                                
+                                </div>    
                             </div>
                             @endforelse
                         </div>
