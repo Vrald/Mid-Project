@@ -22,8 +22,6 @@
             <ul class="flex-nav">
                 <li><a href="/List">List</a></li>
                 <li><a href="/create-add">Add</a></li>
-                <li><a href="/Update">Update</a></li>
-                <li><a href="/Erase">Erase</a></li>
             </ul>
         </div>
     </div>
@@ -38,66 +36,140 @@
 
                 <ul class="FAQ-lab">
                     <li class="FAQ-gap">
-                        
-                        <label for="first">
-                            <div  class="baloon">
-                                <div class="wrap-lead">
-                                    <img src="images/person.png" alt="">
-                                    <div class="p-baloon">John Doe</div>
+                        <div>
+                            @forelse ($adds as $add)
+                            <label for="checkbox{{$loop->iteration}}">
+                                <div  class="baloon">
+                                    <div class="wrap-lead">
+                                        <img src="images/person.png" alt="">
+                                        <div class="p-baloon">{{$add->Name}}</div>
+                                    </div>
+                                    
+                                    <img src="images/up-arrow.png" alt="" class="arrow1">
+                                </div>
+                            </label>
+                            <input type="checkbox" name="faq" id="checkbox{{$loop->iteration}}">
+                                
+                            <div class="faq-info">
+
+                                <div class="faq-center">
+                                    <div class="faq-space">
+                                        <img src="images/b-cake.png" alt="">
+                                    </div>
+                                    
+                                    <p><h6>{{$add->Age}}</h6> tahun</p>
+                                </div>
+
+                                <div class="faq-center">
+                                    <div class="faq-space">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <!-- <p>Silver Coconut, Block A No 12, Kelapa Gading</p> -->
+                                    <p>{{$add->Address}}</p>
                                 </div>
                                 
-                                <img src="images/up-arrow.png" alt="" class="arrow1">
-                            </div>
-                        </label>
-                        <input type="checkbox" name="faq" id="first">
-                            
-                        <div class="faq-info">
+                                <div class="faq-center">
+                                    <div class="faq-space">
+                                        <img src="images/b-mail.png" alt="" style="widht: 80px; height: 65px;">
+                                    </div>
+                                    <!-- <p>johndoe@gmail.com</p> -->
+                                    <p>{{$add->Email}}</p>
+                                </div>
 
-                            <div class="faq-center">
-                                <div class="faq-space">
-                                    <img src="images/b-cake.png" alt="">
+                                <div class="faq-center">
+                                    <div class="faq-space">
+                                        <img src="images/b-wa.png" alt="">
+                                    </div>
+                                    <!-- <p>08123123123</p> -->
+                                    <p>{{$add->Number}}</p>
+                                </div>
+
+                                <!-- Leader Data Button CV-->
+
+                                <div class="wrap-faq">
+                                    <div class="faq-button">
+                                        <a href="/update/{{ $add->id }}"><button>Update</button></a>
+                                    </div>
+
+                                    <!-- Leader Data Button FLASS CARD-->
+                                    <div class="faq-button">
+                                        <form action="/delete-data/{{ $add->id }}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                            <button>Delete</button>
+                                        </form>
+                                        
+                                    </div>
                                 </div>
                                 
-                                <p><h6>18</h6> tahun</p>
                             </div>
-
-                            <div class="faq-center">
-                                <div class="faq-space">
-                                    <i class="fa-solid fa-location-dot"></i>
+                            @empty
+                            <label for="first">
+                                <div  class="baloon">
+                                    <div class="wrap-lead">
+                                        <img src="images/person.png" alt="">
+                                        <div class="p-baloon">No Data</div>
+                                    </div>
+                                    
+                                    <img src="images/up-arrow.png" alt="" class="arrow1">
                                 </div>
-                                <p>Silver Coconut, Block A No 12, Kelapa Gading</p>
-                            </div>
-                            
-                            <div class="faq-center">
-                                <div class="faq-space">
-                                    <img src="images/b-mail.png" alt="" style="widht: 80px; height: 65px;">
-                                </div>
-                                <p>johndoe@gmail.com</p>
-                            </div>
+                            </label>
+                            <input type="checkbox" name="faq" id="first">
+                                
+                            <div class="faq-info">
 
-                            <div class="faq-center">
-                                <div class="faq-space">
-                                    <img src="images/b-wa.png" alt="">
-                                </div>
-                                <p>08123123123</p>
-                            </div>
-
-                            <!-- Leader Data Button CV-->
-
-                            <div class="wrap-faq">
-                                <div class="faq-button">
-                                    <button>Update</button>
-                                    <div class="download"></div>
+                                <div class="faq-center">
+                                    <div class="faq-space">
+                                        <img src="images/b-cake.png" alt="">
+                                    </div>
+                                    
+                                    <p><h6>???</h6> tahun</p>
                                 </div>
 
-                                <!-- Leader Data Button FLASS CARD-->
-                                <div class="faq-button">
-                                    <button>Delete</button>
-                                    <div class="download2"></div>
+                                <div class="faq-center">
+                                    <div class="faq-space">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <p>Mars, Samping Matahari, deket pohon</p>
+
                                 </div>
+                                
+                                <div class="faq-center">
+                                    <div class="faq-space">
+                                        <img src="images/b-mail.png" alt="" style="widht: 80px; height: 65px;">
+                                    </div>
+                                    <p>johndoe@gmail.com</p>
+
+                                </div>
+
+                                <div class="faq-center">
+                                    <div class="faq-space">
+                                        <img src="images/b-wa.png" alt="">
+                                    </div>
+
+                                    <p>081234567891</p>
+                                </div>
+
+                                <!-- Leader Data Button CV-->
+
+                                <div class="wrap-faq">
+                                    <div class="faq-button">
+                                        <button>Update</button>
+                                        <div class="download"></div>
+                                    </div>
+
+                                    <!-- Leader Data Button FLASS CARD-->
+                                    <div class="faq-button">
+                                        <button>Delete</button>
+                                        <div class="download2"></div>
+                                    </div>
+                                </div>
+                                
                             </div>
-                            
+                            @endforelse
                         </div>
+                        
+                        
                         
                     </li>
 

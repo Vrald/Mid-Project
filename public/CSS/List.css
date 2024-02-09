@@ -66,21 +66,6 @@ body{
     padding: 17px 25px;
 }
 
-.button1{
-    color: white !important;
-    border-radius: 30px;
-    background-color: darkblue;
-    padding: 10px 25px;
-    font-weight: bolder;
-}
-
-.button1:hover{
-    color: black !important;
-    background-color: #89CFF3;
-    font-weight: bold;
-    transition: all .5s ease-in-out;
-}
-
 .kosong{
     height: 78px;
     width: 100%;
@@ -210,7 +195,7 @@ body{
     color: #024EC7;
     font-weight: 600;
     overflow: hidden;
-    max-height: 0;
+    max-height: 0px;
     transition: 0.8s;
 }
 
@@ -308,24 +293,4 @@ body{
     align-items: center;
     position: relative;
     height: auto;
-}
-
-.download{
-    position: absolute;
-    width: 46px;
-    height: 41px;
-    background-image: url(../images/download.png);
-    right: 68%;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.download2{
-    position: absolute;
-    width: 46px;
-    height: 41px;
-    background-image: url(../images/download.png);
-    right: 50.5%;
-    background-repeat: no-repeat;
-    background-position: center;
 }

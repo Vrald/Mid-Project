@@ -6,7 +6,7 @@
     <title>Add</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="CSS/Add.css">
+    <link rel="stylesheet" href="/CSS/Add.css">
 
     <!-- Font -->
     <style>
@@ -15,31 +15,19 @@
 
 </head>
 <body>
-    <div class="navigation">
-        <div>
-            <ul class="flex-nav">
-                <li><a href="/List">List</a></li>
-                <li><a href="/create-add">Add</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="kosong"></div>
-
-    <h1 class="heading">Karyawan Baru</h1>
 
     <div class="container">
         <div class="box">
             <div class="bg-box"></div>
 
-            <h1 class="header-sign">INFORMASI KARYAWAN</h1>
+            <h1 class="header-sign">EDIT INFORMASI</h1>
 
-            <form id="step2-form" name="forms" action="/create-list" method="POST">
+            <form id="step2-form" name="forms" action="/update-data/{{ $add->id }}" method="POST">
                 @csrf
-
+                @method('patch')
                 <div class="inputs">
                     <label for="nama">Full name</label>
-                    <input type="text" id="name" placeholder="Masukkan nama lengkap anda..." class="inputss @error('Name') border-red @enderror" name="Name" value = "{{ old('Name') }}">
+                    <input type="text" id="name" placeholder="Masukkan nama lengkap anda..." class="inputss @error('Name') border-red @enderror" name="Name" value = "{{ $add->Name }}">
 
                     @error('Name')
                         <div class = "error-message"> {{$message}} </div>
@@ -50,7 +38,7 @@
                 <div class="inputs">
                     <label for="nama">Your email</label>
 
-                    <input type="text" id="email" placeholder="Masukkan email anda..." class="inputss @error('Email') border-red @enderror" name="Email" value = "{{ old('Email') }}">
+                    <input type="text" id="email" placeholder="Masukkan email anda..." class="inputss @error('Email') border-red @enderror" name="Email" value = "{{ $add->Email }}">
                     @error('Email')
                         <div class = "error-message"> {{$message}} </div>
                     @enderror
@@ -61,7 +49,7 @@
 
                         <label for="nama">Your address</label>
 
-                        <input type="text" id="add" placeholder="Masukkan alamat anda..." class="inputss @error('Address') border-red @enderror"name="Address" value = "{{ old('Address') }}">
+                        <input type="text" id="add" placeholder="Masukkan alamat anda..." class="inputss @error('Address') border-red @enderror"name="Address" value = "{{ $add->Address }}">
 
                         @error('Address')
                         <div class = "error-message"> {{$message}} </div>
@@ -74,7 +62,7 @@
                     <div class="selection2">
                         <label for="nama" class="bd-label">Your number</label>
     
-                        <input type="text" id="wa" placeholder="08xxxxxxx..." class="birth-p @error('Number') border-red @enderror" name="Number" value = "{{ old('Number') }}">
+                        <input type="text" id="wa" placeholder="08xxxxxxx..." class="birth-p @error('Number') border-red @enderror" name="Number" value = "{{ $add->Number }}">
                         
                         @error('Number')
                             <div class = "error-message"> {{$message}} </div>
@@ -85,7 +73,7 @@
                     <div class="selection2">
                         <label for="nama" class="bd-label">Your age</label>
     
-                        <input type="text" id="age" placeholder="Masukkan umur anda..." class="birth-p @error('Age') border-red @enderror" name="Age" value = "{{ old('Age') }}">
+                        <input type="text" id="age" placeholder="Masukkan umur anda..." class="birth-p @error('Age') border-red @enderror" name="Age" value = "{{ $add->Age }}">
                         
                         @error('Age')
                         <div class = "error-message"> {{$message}} </div>
@@ -98,7 +86,7 @@
             
         </div>
 
-        <button id="step-btn" type="submit" href="create-list">ADD</button>
+        <button id="step-btn" type="submit" href="">EDIT</button>
     </div>
 </form>
     <script src="JS/Add.js"></script>

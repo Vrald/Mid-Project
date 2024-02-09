@@ -141,7 +141,7 @@ function validateAdd() {
       isAgeValid
     ) {
 
-      // window.location.href='List';  
+      window.location.href='List';  
 
     }
   });

@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('Name');
             $table->string('Email');
-            $table->string('Age');
-            $table->string('Number');
+            $table->integer('Age');
+            $table->integer('Number');
             $table->string('Address');
             $table->timestamps();
         });

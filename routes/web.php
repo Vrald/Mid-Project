@@ -22,8 +22,22 @@ Route::get('/', function () {
     return view('List');
 });
 
+Route::get('/Add', function () {
+    return view('Add');
+});
+
+Route::get('/updateData', function () {
+    return view('updateData');
+});
+
 Route::get('/create-add', [AddController::class, 'Add']);
 
 Route::post('/create-list', [AddController::class, 'createlist']);
 
-Route::get('/Lists', [AddController::class, 'readList']);
+Route::get('/List', [AddController::class, 'readList']);
+
+Route::get('/update/{id}', [AddController::class, 'updateData']);
+
+Route::patch('/update-data/{id}', [AddController::class, 'editData']);
+
+Route::delete('/delete-data/{id}', [AddController::class, 'deleteData']);

@@ -139,7 +139,7 @@ body{
     color: #22539F;
 }
 
-.inputs input{
+.inputss{
     height: 85.18px;
     border-radius: 30px;
     background-color: transparent;
@@ -327,6 +327,10 @@ body{
     letter-spacing: 2px;
     font-weight: bold;
     color: #22539F;
+}
+
+.border-red {
+    border: 3px solid red;
 }
 
 .inputs3 input{
