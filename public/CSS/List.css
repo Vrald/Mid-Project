@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #C1E1FF;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+}
+
+.navigation{
+    top: 0;
+    left: 0;
+    right: 0;
+    border: 2px solid darkblue;
+    background-color: #C1E1FF;
+    height: auto;
+    display: flex;
+    position: fixed;
+    font-size: 25px;
+    letter-spacing: 3px;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.flex-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.flex-nav a{
+    color: black;
+}
+
+.flex-nav a:hover{
+    font-weight: bolder;
+}
+
+.flex-nav a:not(.button1)::after{
+    content: '';
+    display: block;
+    padding-bottom: 2px;
+    border-bottom: 3px solid #001B79;
+    border-radius: 20%;
+    transform: scaleX(0);
+    transition: .2s linear;
+}
+
+.flex-nav a:hover::after{
+    transform: scaleX(0.5);
+}
+
+.flex-nav > li{
+    list-style-type: none;
+    padding: 17px 25px;
+}
+
+.button1{
+    color: white !important;
+    border-radius: 30px;
+    background-color: darkblue;
+    padding: 10px 25px;
+    font-weight: bolder;
+}
+
+.button1:hover{
+    color: black !important;
+    background-color: #89CFF3;
+    font-weight: bold;
+    transition: all .5s ease-in-out;
+}
+
+.kosong{
+    height: 78px;
+    width: 100%;
+}
+
+.heading{
+    text-align: center;
+    font-size: 130px;
+    font-weight: 900;
+    background: linear-gradient(to right, #004EC6 5%, #0064FF 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 8px;
+}
+
+.d-FAQ {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 90px 84px 90px 84px;
+    width: 100%;
+    height: auto;
+}
+
+.leader{
+    margin-bottom: 95px;
+}
+
+.leader h1{
+    font-size: 120px;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: 9px;
+}
+
+.d-baloon{
+    padding-top: 62px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.baloon{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1141px;
+    min-height: 119px;
+    background: #024EC7;
+    border-radius: 30px;
+    padding: 29px 46px;
+    cursor: pointer;
+    box-shadow: 4px 4px 2px black;
+}
+
+.wrap-lead{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.FAQ-lab {
+    display: flex;
+    flex-direction: column;
+}
+
+.FAQ-lab li{
+    list-style-type: none;
+}
+
+.inside-baloon{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.p-baloon{
+    margin-left: 40px;
+    font-size: 40px;
+    color: white;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.FAQ-lab li label + input[type="checkbox"]
+{
+    display: none;
+}
+
+.FAQ-lab li label + input[type="checkbox"]:checked + .faq-info
+{
+    max-height: 1000px;
+    padding: 48px 48px 48px 48px;
+    border: 3px solid #22539F;
+    box-shadow: 0px 4px 4px  grey;
+    transition: 0.8s;
+    margin-bottom: 50px;
+}
+
+.p-arrow{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.arrow1{
+    width: 58.14px;
+    margin-right: 18px;
+    opacity: 1;
+    transition: .5s;
+}
+
+.kotak-biru{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.faq-info{
+    margin-top: 50px;
+    letter-spacing: 2px;
+    border-radius: 30px;
+    background: white;
+    width: 1141px;
+    padding: 0 48px;
+    font-size: 40px;
+    color: #024EC7;
+    font-weight: 600;
+    overflow: hidden;
+    max-height: 0;
+    transition: 0.8s;
+}
+
+.faq-info p{
+    margin-left: 27px;
+}
+
+.faq-info h6{
+    margin-right: 10px;
+    font-size: 40px;
+    font-weight: 600;
+    color: #024EC7;
+}
+
+.faq-center{
+    display: flex;
+    align-items: center;
+    margin-bottom: 42px;
+    height: auto;
+}
+
+.faq-center img{
+    width: 80px;
+    height: 80px;
+}
+
+.wrap-faq{
+    display: flex;
+    gap: 50px;
+}
+
+.faq-space{
+    width: 100px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.faq-center i{
+    color:#004EC6;
+    font-size: 70px;
+    text-align: center;
+}
+
+.baloon.active .arrow1{
+    transform: rotate(-180deg);
+}
+
+.faq-button{
+    margin-bottom: 34px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: auto;
+}
+
+.faq-button2{
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: auto;
+}
+
+.faq-button button{
+    padding: 12px 46px;
+    color: white;
+    background-color: #024EC7;
+    font-size: 35px;
+    padding: 25px 50px;
+    height: auto;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.faq-button2 button{
+    padding: 12px 46px;
+    color: white;
+    background-color: #024EC7;
+    font-size: 35px;
+    width: 551px;
+    height: 75px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-align: left;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.faq-button2{
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: auto;
+}
+
+.download{
+    position: absolute;
+    width: 46px;
+    height: 41px;
+    background-image: url(../images/download.png);
+    right: 68%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.download2{
+    position: absolute;
+    width: 46px;
+    height: 41px;
+    background-image: url(../images/download.png);
+    right: 50.5%;
+    background-repeat: no-repeat;
+    background-position: center;
+}

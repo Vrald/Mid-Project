@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AddController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/List', function () {
+    return view('List');
 });
+
+Route::get('/', function () {
+    return view('List');
+});
+
+Route::get('/create-add', [AddController::class, 'Add']);
+
+Route::post('/create-list', [AddController::class, 'createlist']);
+
+Route::get('/Lists', [AddController::class, 'readList']);
